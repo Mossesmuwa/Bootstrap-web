@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="800" height="400" role="img" aria-labelledby="title desc">
+  <title id="title">Showcase illustration: laptop with code</title>
+  <desc id="desc">Stylized laptop with code lines and decorative shapes for the front-end bootcamp hero section.</desc>
+
+  <defs>
+    <linearGradient id="screenGrad" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#0ea5e9"/>
+      <stop offset="1" stop-color="#7c3aed"/>
+    </linearGradient>
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feOffset dx="0" dy="12" result="off"/>
+      <feGaussianBlur in="off" stdDeviation="18" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0   0 0 0 0.25 0" />
+      <feBlend in="SourceGraphic"/>
+    </filter>
+    <clipPath id="roundedScreen">
+      <rect x="140" y="60" width="520" height="250" rx="12" ry="12"/>
+    </clipPath>
+  </defs>
+
+  <!-- background decorative circles -->
+  <g opacity="0.12">
+    <circle cx="60" cy="60" r="60" fill="#7c3aed"/>
+    <circle cx="740" cy="340" r="80" fill="#0ea5e9"/>
+  </g>
+
+  <!-- laptop shadow -->
+  <g transform="translate(0,6)">
+    <ellipse cx="400" cy="320" rx="200" ry="28" fill="#000" opacity="0.18"/>
+  </g>
+
+  <!-- laptop base -->
+  <g filter="url(#shadow)">
+    <rect x="100" y="280" width="600" height="28" rx="6" fill="#222" />
+    <rect x="120" y="232" width="560" height="56" rx="6" fill="#2b2b2b" />
+  </g>
+
+  <!-- laptop screen -->
+  <g>
+    <rect x="120" y="60" width="560" height="220" rx="14" ry="14" fill="#111" stroke="#1f1f1f" stroke-width="2"/>
+    <rect x="140" y="74" width="520" height="192" rx="10" ry="10" fill="url(#screenGrad)"/>
+    <!-- glass glare -->
+    <path d="M140 74 C260 10, 540 10, 660 74 L660 110 C540 46, 260 46, 140 110 Z" fill="#ffffff" opacity="0.06"/>
+    <!-- clipped code panel -->
+    <g clip-path="url(#roundedScreen)">
+      <rect x="140" y="74" width="520" height="192" fill="transparent"/>
+      <!-- faux terminal background -->
+      <rect x="154" y="92" width="492" height="148" rx="8" ry="8" fill="#0b1220" opacity="0.88"/>
+      <!-- top dots -->
+      <circle cx="176" cy="108" r="6" fill="#ff5f56"/>
+      <circle cx="198" cy="108" r="6" fill="#ffbd2e"/>
+      <circle cx="220" cy="108" r="6" fill="#27c93f"/>
+      <!-- code lines -->
+      <g transform="translate(176,128)">
+        <rect x="0" y="0" width="360" height="12" rx="6" fill="#9be3ff"/>
+        <rect x="0" y="22" width="280" height="10" rx="5" fill="#ffd38a"/>
+        <rect x="0" y="40" width="220" height="10" rx="5" fill="#b8ffb3"/>
+        <rect x="0" y="58" width="300" height="10" rx="5" fill="#c9b9ff"/>
+        <!-- angled bracket icon -->
+        <g transform="translate(-24, -4)">
+          <path d="M52 10 L36 24 L52 38" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <path d="M68 10 L84 24 L68 38" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <!-- small accent device to the right -->
+  <g transform="translate(560,220) rotate(-8)">
+    <rect x="0" y="0" width="120" height="70" rx="8" ry="8" fill="#ffffff" opacity="0.06"/>
+    <rect x="8" y="8" width="104" height="54" rx="6" ry="6" fill="#0b1220"/>
+    <rect x="16" y="16" width="72" height="10" rx="4" fill="#9be3ff"/>
+    <rect x="16" y="30" width="48" height="8" rx="4" fill="#ffd38a"/>
+    <rect x="16" y="44" width="88" height="6" rx="3" fill="#b8ffb3"/>
+  </g>
+</svg>
